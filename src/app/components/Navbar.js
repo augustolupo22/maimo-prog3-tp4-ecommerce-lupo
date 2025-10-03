@@ -21,13 +21,13 @@ export default function Navbar() {
         <Link href="/" className="hover:text-yellow-500 transition">
           Inicio
         </Link>
-        <Link href="/productos" className="hover:text-yellow-500 transition">
+        <Link href="/nuestrosproductos" className="hover:text-yellow-500 transition">
           Productos
         </Link>
         <Link href="/personalizar" className="hover:text-yellow-500 transition">
           Personalizar
         </Link>
-        <Link href="/contacto" className="hover:text-yellow-500 transition">
+        <Link href="/contact" className="hover:text-yellow-500 transition">
           Contacto
         </Link>
       </div>
