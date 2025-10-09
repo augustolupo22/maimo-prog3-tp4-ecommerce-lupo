@@ -19,8 +19,7 @@ export default function ProductsContainer() {
   }, []);
 
   return (
-    <section className="pt-30 bg-black">
-      <h1 className="text-2xl font-bold mb-6">Nuestros Productos</h1>
+    <section className="p-10 bg-black">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 justify-items-center">
         {products.map((p) => (
           <ProductCard key={p._id} product={p} />
