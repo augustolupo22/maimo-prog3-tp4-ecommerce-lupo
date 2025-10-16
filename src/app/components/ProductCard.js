@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[320px] h-[480px] border hover:shadow-xl hover:scale-105 transition cursor-pointer flex flex-col justify-between">
+    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[320px] h-[500px] border hover:shadow-xl hover:scale-105 transition cursor-pointer flex flex-col justify-between">
       <div className="bg-yellow-500 text-black text-xs font-bold px-3 py-2 rounded-br-none">
         ENVÍO GRATIS
       </div>
@@ -17,13 +17,13 @@ export default function ProductCard({ product }) {
           src={product.imagen}
           alt={product.name}
           width={250}
-          height={200}
+          height={250}
           className="object-contain"
         />
       </div>
 
       <div className="px-5 pb-5 text-center">
-        <h2 className="text-sm font-semibold uppercase text-gray-800 min-h-[40px] line-clamp-2">
+        <h2 className="text-xl font-semibold uppercase text-yellow-500 min-h-[40px] line-clamp-2">
           {product.name}
         </h2>
 
@@ -41,16 +41,16 @@ export default function ProductCard({ product }) {
         <div className="mt-4 flex justify-center gap-3">
           <button
             onClick={() => addToCart(product)}
-            className="bg-black text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition"
+            className="bg-black text-white text-sm px-4 py-2 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition"
           >
-            COMPRAR
+            Agregar al carrito
           </button>
 
           <Link
             href={`/products/${product._id}`}
-            className="border border-black text-xs text-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition"
+            className="border border-black text-sm text-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition"
           >
-            VER
+            Ver
           </Link>
         </div>
       </div>

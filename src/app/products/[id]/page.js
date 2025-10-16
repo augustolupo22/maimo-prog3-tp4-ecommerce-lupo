@@ -70,7 +70,7 @@ export default function ProductDetail() {
         </div>
 
         <button className="bg-black text-white px-6 py-3 rounded-lg font-bold hover:bg-yellow-600">
-          Comprar
+          Agregar al carrito
         </button>
       </div>
     </div>
