@@ -4,18 +4,12 @@ import ProductCard from "./ProductCard";
 
 export default function ProductsContainer() {
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const baseURL = process.env.NEXT_PUBLIC_API_URL;
-        const endpoint = `${baseURL}/products`;
-        console.log("URL final del fetch:", endpoint);
-
-        const res = await fetch(endpoint);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
         if (!res.ok) throw new Error(`Error HTTP ${res.status}`);
-
         const data = await res.json();
 
         if (!Array.isArray(data)) {
@@ -23,26 +17,21 @@ export default function ProductsContainer() {
         }
 
         setProducts(data);
-      } catch (err) {
-        console.error("Error al cargar productos:", err);
-        setError(err.message);
+      } catch (error) {
+        console.error("Error al cargar productos:", error);
       }
     }
 
     fetchProducts();
   }, []);
 
-  if (error)
+  if (!products.length) {
     return (
-      <p className="text-center text-red-500 mt-10">
-        Error al cargar productos: {error}
+      <p className="text-center text-red-500 font-semibold mt-10">
+        Error al cargar productos o sin datos disponibles.
       </p>
     );
-
-  if (!products.length)
-    return (
-      <p className="text-center text-gray-400 mt-10">Cargando productos...</p>
-    );
+  }
 
   return (
     <section className="p-10 bg-black">
