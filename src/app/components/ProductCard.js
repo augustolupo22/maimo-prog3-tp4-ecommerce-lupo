@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[320px] h-[500px] border hover:shadow-xl hover:scale-105 transition cursor-pointer flex flex-col justify-between">
+    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[390px] h-[500px] border hover:shadow-xl hover:scale-105 transition cursor-pointer flex flex-col justify-between">
       <div className="bg-yellow-500 text-black text-xs font-bold px-3 py-2 rounded-br-none">
         ENVÍO GRATIS
       </div>
